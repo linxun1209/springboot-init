@@ -1,0 +1,35 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username:
+    password:
+    url:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  session:
+    timeout: 3600
+  redis:
+    host:
+    port:
+    password:
+    connect-timeout: 60s
+    timeout: 120s
+    lettuce:
+      pool:
+        max-wait: 60s
+        max-active: 20
+        max-idle: 10
+        min-idle: 5
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: false
+  global-config:
+    db-config:
+      logic-delete-field: isDeleted
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+server:
+  port: 8080
+  servlet:
+    context-path: /api
